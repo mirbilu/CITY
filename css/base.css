@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 1000px;
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    background-color: #e7f5d5;
+    opacity: 0.5;
+    position: fixed;
+    z-index: 99;
+}
+
+.city {
+    margin-left: 50px;
+}
+
+.picshow {
+    width: 100%;
+    height: 300px;
+    /*background-color: red;*/
+}
+
+.scenicSpot {
+    height: 300px;
+    overflow: hidden;
+    background-color: blue;
+    border-radius: 5px;
+}
+
+.message {
+    height: 300px;
+    border-radius: 25px;
+    background-image: url(../img/wall.jpg);
+}
+
+.strategyShare {
+    width: 100%;
+}
+
+.sidenav {
+    width: 200px;
+    position: fixed;
+    left: -150px;
+    top: 50px;
+    background-image: url(../img/guidepost.png);
+    background-repeat: repeat;
+    /*background-color: black;*/
+    /*opacity: 0.5;*/
+}
+
+
+/*轮播图翻页按钮效果*/
+
+.picnumber {
+    position: relative;
+    bottom: 20px;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.picnumber ul li {
+    display: inline-block;
+    float: left;
+    width: 25px;
+    height: 25px;
+    background-image: url("../img/yes_image.png");
+    /*text-align: center;*/
+    /*border: .5px solid black;*/
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+.choose-1 {
+    background-position: 0 0;
+}
+
+.choose-2 {
+    background-position: -25px 0;
+}
+
+.choose-3 {
+    background-position: -50px 0;
+}
+
+.choose-4 {
+    background-position: -75px 0;
+}
+
+.picnumber ul li:hover {
+    cursor: pointer;
+}
+
+
+/*轮播图*/
+
+.wapper {
+    -webkit-perspective: 800px;
+    -webkit-perspective-origin: 50% 50%;
+    width: 500px;
+    height: 200px;
+    position: relative;
+    top: 75px;
+    margin: 50px auto;
+}
+
+.rotate {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.pic {
+    -webkit-transform-origin: center;
+    position: absolute;
+    height: 200px;
+    width: 500px;
+}
+
+.picOne {
+    background-color: red;
+    -webkit-transform: translateX(-250px);
+}
+
+.picTwo {
+    background-color: blue;
+    transform: translateZ(-250px);
+}
+
+.picThree {
+    background-color: black;
+    transform: translateX(250px);
+}
+
+.picFour {
+    background-color: green;
+    transform: translateZ(250px);
+}
+
+
+/*景点信息控制*/
+
+.scenic-wapper {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.scenic-wapper ul {
+    position: relative;
+}
+
+.scenic-wapper ul li {
+    display: inline-block;
+    position: relative;
+    float: left;
+    height: 280px;
+    margin-top:10px; 
+    border-radius: 5px;
+    background-color: white;
+}
+
+.scenic-choose {
+    position: relative;
+    top: -45px;
+    left: 56px;
+}
+
+.scenic-choose ul li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 10px;
+    text-align: center;
+    background-color: #9a9a9a;
+    float: left;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+
+/*留言墙模块*/
+
+.show-message {
+    width: 100%;
+    height: 240px;
+    margin-top: 10px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.wallmessage {
+    position: relative;
+    transform-origin: center;
+    transform: translateX(-350px);
+}
+
+.insert-message {
+    margin-top: 5px;
+}
+
+.form-control {
+    width: 100%!important;
+}
+
+@keyframes rollin {
+    0% {
+        transform: translateX(-350px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(350px);
+    }
+}
+
+
+/*攻略模块*/
+
+.strategybox {
+    height: 250px;
+    margin-top: 15px;
+}
+
+.strategyShare button {
+    position: relative;
+    bottom: 5px;
+    left: 5px;
+}
+
+.strategyShare a {
+    color: white;
+    text-decoration: none;
+}
+
+.strategy {
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px;
+    /*height: 250px;*/
+    border: .5px solid rgba(200, 200, 200, 1);
+    background-color: white;
+}
+
+.strategy img {
+    width: 100%;
+    height: 150px;
+    margin: 10px 0;
+}
+
+.strategy-contant {
+    display: none;
+}
+
+.strategy span {
+    display: inline-block;
+    float: right;
+    margin-left: 10px;
+}
+
+.introduce {
+    height: 40px;
+}

@@ -50,8 +50,6 @@ header {
     top: 50px;
     background-image: url(../img/guidepost.png);
     background-repeat: repeat;
-    /*background-color: black;*/
-    /*opacity: 0.5;*/
 }
 
 
@@ -70,10 +68,12 @@ header {
     width: 25px;
     height: 25px;
     background-image: url("../img/yes_image.png");
-    /*text-align: center;*/
-    /*border: .5px solid black;*/
     border-radius: 50%;
     margin: 0 15px;
+}
+
+.picnumber ul li:first-child{
+    background-image: url("../img/no_image.png");
 }
 
 .choose-1 {
@@ -125,26 +125,25 @@ header {
 }
 
 .picOne {
-    background-color: red;
     -webkit-transform: translateX(-250px);
 }
 
 .picTwo {
-    background-color: blue;
     transform: translateZ(-250px);
 }
 
 .picThree {
-    background-color: black;
     transform: translateX(250px);
 }
 
 .picFour {
-    background-color: green;
     transform: translateZ(250px);
 }
 
-
+.showpic{
+    height: 200px;
+    width: 500px;
+}
 /*景点信息控制*/
 
 .scenic-wapper {
@@ -184,6 +183,10 @@ header {
     float: left;
     border: 1px solid black;
     border-radius: 50%;
+}
+
+.scenic-choose ul li:first-child{
+    background-color: blue;
 }
 
 

@@ -1,6 +1,6 @@
 <?php 
 	header("Content-type:application/json;charset=utf-8");
-	$link = mysqli_connect('localhost','root','root','strategyPlat',8889);
+	$link = mysqli_connect('mysql.rdsm2ntalmdzv5t.rds.gz.baidubce.com','mirbilu','chenlin123','strategyPlat',3306);
 	if ($link) {
 		$troduce=$_POST['newtitle'];
 		$img=$_POST['newfirstpage'];

@@ -19,10 +19,10 @@ $(document).ready(function() {
                 queue: false,
                 step: function(now, fx) {
                     $(".rotate").css('transform', 'rotateY(' + now + 'deg)');
-                    $(".picOne").css('transform', 'translateX(-250px) rotateY(-' + now + 'deg)');
-                    $(".picTwo").css('transform', 'translateZ(-250px) rotateY(-' + now + 'deg)');
-                    $(".picThree").css('transform', 'translateX(250px) rotateY(-' + now + 'deg)');
-                    $(".picFour").css('transform', 'translateZ(250px) rotateY(-' + now + 'deg)');
+                    $(".picOne").css('transform', 'translateX(-200px) rotateY(-' + now + 'deg)');
+                    $(".picTwo").css('transform', 'translateZ(-200px) rotateY(-' + now + 'deg)');
+                    $(".picThree").css('transform', 'translateX(200px) rotateY(-' + now + 'deg)');
+                    $(".picFour").css('transform', 'translateZ(200px) rotateY(-' + now + 'deg)');
                 },
             });
             $(".picnumber ul li").css('background-image', 'url("img/yes_image.png")');
@@ -35,10 +35,10 @@ $(document).ready(function() {
                 queue: false,
                 step: function(now, fx) {
                     $(".rotate").css('transform', 'rotateY(' + now + 'deg)');
-                    $(".picOne").css('transform', 'translateX(-250px) rotateY(-' + now + 'deg)');
-                    $(".picTwo").css('transform', 'translateZ(-250px) rotateY(-' + now + 'deg)');
-                    $(".picThree").css('transform', 'translateX(250px) rotateY(-' + now + 'deg)');
-                    $(".picFour").css('transform', 'translateZ(250px) rotateY(-' + now + 'deg)');
+                    $(".picOne").css('transform', 'translateX(-200px) rotateY(-' + now + 'deg)');
+                    $(".picTwo").css('transform', 'translateZ(-200px) rotateY(-' + now + 'deg)');
+                    $(".picThree").css('transform', 'translateX(200px) rotateY(-' + now + 'deg)');
+                    $(".picFour").css('transform', 'translateZ(200px) rotateY(-' + now + 'deg)');
                 },
             });
             $(".picnumber ul li").css('background-image', 'url("img/yes_image.png")');
@@ -50,10 +50,10 @@ $(document).ready(function() {
                 queue: false,
                 step: function(now, fx) {
                     $(".rotate").css('transform', 'rotateY(' + now + 'deg)');
-                    $(".picOne").css('transform', 'translateX(-250px) rotateY(-' + now + 'deg)');
-                    $(".picTwo").css('transform', 'translateZ(-250px) rotateY(-' + now + 'deg)');
-                    $(".picThree").css('transform', 'translateX(250px) rotateY(-' + now + 'deg)');
-                    $(".picFour").css('transform', 'translateZ(250px) rotateY(-' + now + 'deg)');
+                    $(".picOne").css('transform', 'translateX(-200px) rotateY(-' + now + 'deg)');
+                    $(".picTwo").css('transform', 'translateZ(-200px) rotateY(-' + now + 'deg)');
+                    $(".picThree").css('transform', 'translateX(200px) rotateY(-' + now + 'deg)');
+                    $(".picFour").css('transform', 'translateZ(200px) rotateY(-' + now + 'deg)');
                 },
             });
             $(".picnumber ul li").css('background-image', 'url("img/yes_image.png")');
@@ -65,10 +65,10 @@ $(document).ready(function() {
                 queue: false,
                 step: function(now, fx) {
                     $(".rotate").css('transform', 'rotateY(' + now + 'deg)');
-                    $(".picOne").css('transform', 'translateX(-250px) rotateY(-' + now + 'deg)');
-                    $(".picTwo").css('transform', 'translateZ(-250px) rotateY(-' + now + 'deg)');
-                    $(".picThree").css('transform', 'translateX(250px) rotateY(-' + now + 'deg)');
-                    $(".picFour").css('transform', 'translateZ(250px) rotateY(-' + now + 'deg)');
+                    $(".picOne").css('transform', 'translateX(-200px) rotateY(-' + now + 'deg)');
+                    $(".picTwo").css('transform', 'translateZ(-200px) rotateY(-' + now + 'deg)');
+                    $(".picThree").css('transform', 'translateX(200px) rotateY(-' + now + 'deg)');
+                    $(".picFour").css('transform', 'translateZ(200px) rotateY(-' + now + 'deg)');
                 },
             });
             $(".picnumber ul li").css('background-image', 'url("img/yes_image.png")');

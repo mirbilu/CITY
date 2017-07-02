@@ -5,42 +5,59 @@
 
 body {
     min-width: 1000px;
+    background-color: #9bf1c1;
+}
+
+.container{
+    margin-top:20px;
 }
 
 header {
     height: 50px;
     width: 100%;
     background-color: #e7f5d5;
-    opacity: 0.5;
+    opacity: 0.7;
     position: fixed;
+    top: 0;
     z-index: 99;
 }
 
 .city {
     margin-left: 50px;
+    margin-top: 60px;
 }
 
 .picshow {
-    width: 100%;
     height: 300px;
     /*background-color: red;*/
+}
+
+.admin{
+    height: 300px;
+    border-radius: 10px;
+    background-color: white;
 }
 
 .scenicSpot {
     height: 300px;
     overflow: hidden;
-    background-color: blue;
+    /*background-color: blue;*/
     border-radius: 5px;
 }
 
 .message {
     height: 300px;
     border-radius: 25px;
+    border: 5px solid #c1c1c1;
     background-image: url(../img/wall.jpg);
 }
 
 .strategyShare {
     width: 100%;
+    background-color: #f5f5f5;
+    padding: 0px 30px;
+    border: 2px solid #c1c1c1;
+    border-radius: 10px;
 }
 
 .sidenav {
@@ -57,7 +74,7 @@ header {
 
 .picnumber {
     position: relative;
-    bottom: 20px;
+    bottom: -60px;
     width: 250px;
     margin: 0 auto;
 }
@@ -69,7 +86,7 @@ header {
     height: 25px;
     background-image: url("../img/yes_image.png");
     border-radius: 50%;
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 .picnumber ul li:first-child{
@@ -102,11 +119,11 @@ header {
 .wapper {
     -webkit-perspective: 800px;
     -webkit-perspective-origin: 50% 50%;
-    width: 500px;
-    height: 200px;
+    width: 400px;
+    height: 180px;
     position: relative;
     top: 75px;
-    margin: 50px auto;
+    margin: 0px auto;
 }
 
 .rotate {
@@ -120,29 +137,29 @@ header {
 .pic {
     -webkit-transform-origin: center;
     position: absolute;
-    height: 200px;
-    width: 500px;
+    height: 180px;
+    width: 400px;
 }
 
 .picOne {
-    -webkit-transform: translateX(-250px);
+    -webkit-transform: translateX(-200px);
 }
 
 .picTwo {
-    transform: translateZ(-250px);
+    transform: translateZ(-200px);
 }
 
 .picThree {
-    transform: translateX(250px);
+    transform: translateX(200px);
 }
 
 .picFour {
-    transform: translateZ(250px);
+    transform: translateZ(200px);
 }
 
 .showpic{
-    height: 200px;
-    width: 500px;
+    height: 180px;
+    width: 400px;
 }
 /*景点信息控制*/
 

@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var winHight = $(window).height();
     var sideH = winHight - 50 + 'px';
-    var rollnumber = 0;
     $(".sidenav").css('height', sideH);
     $(".sidenav").bind('mouseover', function() {
         $(".sidenav").css('left', '0');

@@ -34,8 +34,8 @@ header {
 
 .admin{
     height: 300px;
-    border-radius: 10px;
-    background-color: white;
+    /*border-radius: 10px;*/
+    /*background-color: white;*/
 }
 
 .scenicSpot {
@@ -139,6 +139,8 @@ header {
     position: absolute;
     height: 180px;
     width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .picOne {
@@ -161,6 +163,48 @@ header {
     height: 180px;
     width: 400px;
 }
+
+/*登录信息框*/
+.admin-message{
+    /*margin: 30px;*/
+    background-color: white;
+    height: 140px;
+    margin-bottom: 10px; 
+    border-radius: 10px;
+}
+
+.login-contant{
+    margin: 10px;
+}
+
+.admin-logo{
+    display: inline-block;
+    margin: 10px;
+    width: 70px;
+    height: 70px;
+}
+
+.welcomeword{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.welcomeword span{
+    display: block;
+    margin-bottom:10px; 
+}
+
+.login button{
+    margin-left: 20px;
+    width: 70px;
+}
+
+.advertisement{
+    height: 150px;
+    border-radius: 10px;
+    background-color: white;
+}
+
 /*景点信息控制*/
 
 .scenic-wapper {

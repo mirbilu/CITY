@@ -6,6 +6,7 @@
 body {
     min-width: 1000px;
     background-color: #9bf1c1;
+    font-family:"Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
 
 .container{
@@ -210,6 +211,7 @@ header {
 .scenic-wapper {
     height: 100%;
     width: 100%;
+    border-radius: 5px;
     display: inline-block;
     overflow: hidden;
 }
@@ -250,7 +252,59 @@ header {
     background-color: blue;
 }
 
+.spot{
+    height: 80%;
+    width: 80%;
+    margin: 10px auto;
+}
 
+.weather{
+    height: 80px;
+    text-align: center;
+}
+
+.weather-pic{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-image: url(../img/weather.png);
+}
+
+.spotname{
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.bus{
+    display: inline-block;
+    border:.5px solid #a2a2a2;
+    background-color: #41ffb0;
+    border-radius: 3px;
+}
+
+.recommend-message{
+    display: inline-block;
+    border:.5px solid #a2a2a2;
+    background-color: #41ffb0;
+    border-radius: 3px;
+}
+
+.sunny{
+    background-position: -160px 0;
+}
+
+.bigRain{
+    background-position: -160px -80px;
+}
+
+.thunderstorm{
+    background-position: 0 0;
+}
+
+.cloudy{
+    background-position: 0 -80px;
+}
 /*留言墙模块*/
 
 .show-message {

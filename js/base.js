@@ -125,6 +125,22 @@ $(document).ready(function() {
             number = 0;
         }
     });
+    // 景区信息控制
+    $.ajax({
+        type:'get',
+        url:'server/spotmessage.php',
+        datatype:'json',
+        success:function(data){
+            data.forEach(function(item,index,array){
+              var $spot = $(".spot").eq(index);
+              var $recommend = $('<div>').addClass('recommend-message').html('<span>'+item.recommend+'</span>');
+              $spot.children(".row").children(".weather").children(".weather-pic").addClass(item.weather);
+              $spot.children(".row").children(".spotname").children("h1").text(item.spotname);
+              $spot.children(".traffic").children(".busline").children(".bus").text(item.bus);
+              $spot.children(".recommend").append($recommend);
+            })
+        }
+    })
     // 留言墙数据双向传递
     // 接收留言
     $.ajax({

@@ -392,3 +392,7 @@ header {
 .introduce {
     height: 40px;
 }
+
+label{
+    color: white;
+}

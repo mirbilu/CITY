@@ -81,7 +81,7 @@ $(document).ready(function() {
     $(".scenic-choose").css('left',scenicWidth/2-44+'px');
     $(".scenic-choose ul li").bind('click', function() {
         $(".scenic-choose ul li").css('background-color','#9a9a9a');
-        $(this).css('background-color','blue');
+        $(this).css('background-color','#3ac3e2');
         var number = $(this).attr('number');
         if (number == 1) {
             $(".scenic-wapper").animate({ fontsize: 0 }, {
@@ -125,7 +125,7 @@ $(document).ready(function() {
             number = 0;
         }
     });
-    // 景区信息控制
+    // 景区信息传递
     $.ajax({
         type:'get',
         url:'server/spotmessage.php',

@@ -6,6 +6,8 @@
 body {
     min-width: 1000px;
     background-image: url(../img/backpic.png);
+    background-repeat: no-repeat;
+    background-size:100% 100%; 
     background-color: #9bf1c1;
     font-family:"Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
@@ -229,7 +231,14 @@ header {
     height: 280px;
     margin-top:10px; 
     border-radius: 5px;
+    background-image: url(../img/fuzhou.jpg);
+    background-size: 100% 100%;
+    color:white;
     background-color: white;
+}
+
+.scenic-wapper ul li h1{
+    color: #b299ff;
 }
 
 .scenic-choose {

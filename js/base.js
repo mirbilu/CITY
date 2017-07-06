@@ -84,6 +84,19 @@ $(document).ready(function() {
     $(".icon-close").bind('click',function(){
         $(".search-input").css('display','none');
     })
+    // 右侧新闻栏控制
+    $.ajax({
+        type:'get',
+        url:'server/getnews.php',
+        datatype:'json',
+        success:function(data){
+            data.forEach(function(item,index,array){
+                var $thinspan = $('<i>').addClass('iconfont icon-comments').text(item.news);
+                var $thing = $('<div>').addClass('thing').append($thinspan);
+                $(".over-things").append($thing);
+            })
+        }
+    });
     // 登录界面控制
     var winHight = $(window).height();
     $(".admin-login").css('height',winHight);

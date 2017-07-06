@@ -1,13 +1,16 @@
 $(document).ready(function() {
-    var winHight = $(window).height();
-    var sideH = winHight - 50 + 'px';
-    $(".sidenav").css('height', sideH);
-    $(".sidenav").bind('mouseover', function() {
-        $(".sidenav").css('left', '0');
-    });
-    $(".sidenav").bind('mouseout', function() {
-        $(".sidenav").css('left', '-150px');
-    });
+    // 返回顶部按钮
+    $(window).bind('scroll',function(){
+        var scrollHight = $(window).scrollTop();
+        if (scrollHight > 50) {
+            $('.gotop').css('display','block');
+        }else{
+            $('.gotop').css('display','none');
+        }
+    })
+    $('.gotop').bind('click',function(){
+        $(window).scrollTop(0);
+    })
     // 轮播图控制
     $(".picnumber ul li").bind('click', function() {
         var number = $(this).attr("class");
@@ -74,6 +77,23 @@ $(document).ready(function() {
             $(".choose-4").css('background-image', 'url("img/no_image.png")');
         }
     });
+    // 导航条控制
+    $(".search").bind('click',function(){
+        $(".search-input").css('display','inline-block');
+    });
+    $(".icon-close").bind('click',function(){
+        $(".search-input").css('display','none');
+    })
+    // 登录界面控制
+    var winHight = $(window).height();
+    $(".admin-login").css('height',winHight);
+    $(".login-page").css('margin-top',winHight/3);
+    $(".login").bind('click',function(){
+        $(".admin-login").css('display','block');
+    });
+    $(".close").bind('click',function(){
+        $(".admin-login").css('display','none');
+    });
     // 景区信息控制
     var scenicWidth = $(".scenicSpot").width();
     $(".scenic-wapper ul").width(scenicWidth*4);
@@ -85,7 +105,7 @@ $(document).ready(function() {
         var number = $(this).attr('number');
         if (number == 1) {
             $(".scenic-wapper").animate({ fontsize: 0 }, {
-                duration: 2000,
+                duration: 1000,
                 easing: "linear",
                 queue: false,
                 step: function(now, fx) {
@@ -95,7 +115,7 @@ $(document).ready(function() {
             number++;
         } else if (number == 2) {
             $(".scenic-wapper").animate({ fontsize: -scenicWidth }, {
-                duration: 2000,
+                duration: 1000,
                 easing: "linear",
                 queue: false,
                 step: function(now, fx) {
@@ -105,7 +125,7 @@ $(document).ready(function() {
             number++;
         } else if (number == 3) {
             $(".scenic-wapper").animate({ fontsize: -scenicWidth*2 }, {
-                duration: 2000,
+                duration: 1000,
                 easing: "linear",
                 queue: false,
                 step: function(now, fx) {
@@ -115,7 +135,7 @@ $(document).ready(function() {
             number++;
         } else {
             $(".scenic-wapper").animate({ fontsize: -scenicWidth*3 }, {
-                duration: 2000,
+                duration: 1000,
                 easing: "linear",
                 queue: false,
                 step: function(now, fx) {
@@ -133,11 +153,18 @@ $(document).ready(function() {
         success:function(data){
             data.forEach(function(item,index,array){
               var $spot = $(".spot").eq(index);
-              var $recommend = $('<div>').addClass('recommend-message').html('<span>'+item.recommend+'</span>');
               $spot.children(".row").children(".weather").children(".weather-pic").addClass(item.weather);
               $spot.children(".row").children(".spotname").children("h1").text(item.spotname);
-              $spot.children(".traffic").children(".busline").children(".bus").text(item.bus);
-              $spot.children(".recommend").append($recommend);
+              var busnumber = item.bus.split(",");
+              for (var i = 0; i < busnumber.length; i++) {
+                var $bus = $('<span>').addClass('bus').text(busnumber[i]);
+                $spot.children(".traffic").children(".busline").append($bus);
+              };
+              var spotnames = item.recommend.split(",");
+              for (var i = 0; i < spotnames.length; i++) {
+                var $recommend = $('<span>').addClass('recommend-message').text(spotnames[i]);
+                $spot.children(".recommend").append($recommend);
+              };
             })
         }
     })
@@ -180,7 +207,7 @@ $(document).ready(function() {
                 }
             });
         })
-        // 攻略模块显示
+    // 攻略模块显示
     $.ajax({
         type: 'get',
         url: 'server/getstrategy.php',
@@ -213,9 +240,11 @@ $(document).ready(function() {
         });
     });
     $(".strategy").bind('mouseover', function() {
+        $(this).addClass('showstrategy');
         $(this).children(".strategy-contant").css('display', 'block');
     });
     $(".strategy").bind('mouseout', function() {
+        $(this).removeClass('showstrategy');
         $(this).children(".strategy-contant").css('display', 'none');
     });
 })

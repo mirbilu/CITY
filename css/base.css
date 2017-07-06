@@ -7,18 +7,36 @@ body {
     min-width: 1000px;
     background-image: url(../img/backpic.png);
     background-repeat: no-repeat;
-    background-size:100% 100%; 
+    background-size: 100% 100%;
     background-color: #9bf1c1;
-    font-family:"Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
 }
 
-h1{
+h1 {
     display: inline-block;
     color: white;
 }
 
-.container{
-    margin-top:20px;
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.container {
+    margin-top: 20px;
 }
 
 header {
@@ -32,63 +50,57 @@ header {
     z-index: 99;
 }
 
-nav ul{
+nav ul {
     display: inline;
 }
 
-nav  ul li{
+nav ul li {
     display: inline-block;
     float: right;
     margin-right: 30px;
 }
 
-nav a{
-    color: #333;
-    text-decoration: none;
-}
-
-nav a:hover{
-    color: #333;
-    text-decoration: none;
-}
-
-nav  ul li .iconfont{
+nav ul li .iconfont {
     margin-right: 10px;
 }
 
 nav li:hover {
     cursor: pointer;
 }
-
-.admin-login{
+/*登录模块*/
+.admin-login {
     display: none;
     position: fixed;
     top: 0;
-    background-color: rgba(85,80,80,0.7);
+    background-color: rgba(85, 80, 80, 0.7);
     width: 100%;
     z-index: 99;
 }
 
-.login-page{
+.login-page {
     width: 600px;
     background-color: white;
     border-radius: 10px;
 }
 
-.login-form{
+.login-form {
     display: block;
     margin: 59px;
 }
 
-.login-form label{
+.login-form label {
     color: black;
 }
 
-.search-input{
+.close{
+    margin: 20px;
+}
+/*导航栏搜索模块*/
+.search-input {
     display: none;
 }
 
-.input-area{
+.input-area {
     height: 34px;
     width: 400px;
     padding: 6px 12px;
@@ -99,11 +111,11 @@ nav li:hover {
     background-image: none;
     border: 1px solid #ccc;
     border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
 .city {
@@ -114,7 +126,7 @@ nav li:hover {
     height: 300px;
 }
 
-.admin{
+.admin {
     height: 300px;
 }
 
@@ -138,7 +150,7 @@ nav li:hover {
     padding: 0px 30px;
 }
 
-.gotop{
+.gotop {
     display: none;
     position: fixed;
     bottom: 50px;
@@ -168,7 +180,7 @@ nav li:hover {
     margin: 0 10px;
 }
 
-.picnumber ul li:first-child{
+.picnumber ul li:first-child {
     background-image: url("../img/no_image.png");
 }
 
@@ -238,28 +250,32 @@ nav li:hover {
     transform: translateZ(200px);
 }
 
-.showpic{
+.showpic {
     height: 180px;
     width: 400px;
 }
 
+
 /*右侧信息框*/
-.city-message{
-    background-color: rgba(255,255,255,0.7);
-    height: 100%; 
+
+.city-message {
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 100%;
     border-radius: 10px;
     text-align: center;
     padding: 0 10px;
 }
 
-.city-message h3{
+.city-message h3 {
     display: inline-block;
     margin-top: 20px;
 }
 
-.thing{
+.thing {
     border-bottom: 0.5px solid #9a9898;
 }
+
+
 /*景点信息控制*/
 
 .scenic-wapper {
@@ -279,15 +295,15 @@ nav li:hover {
     position: relative;
     float: left;
     height: 280px;
-    margin-top:10px; 
+    margin-top: 10px;
     border-radius: 5px;
     background-image: url(../img/fuzhou.jpg);
     background-size: 100% 100%;
-    color:white;
+    color: white;
     background-color: white;
 }
 
-.scenic-wapper ul li h1{
+.scenic-wapper ul li h1 {
     color: #b299ff;
 }
 
@@ -309,65 +325,67 @@ nav li:hover {
     border-radius: 50%;
 }
 
-.scenic-choose ul li:first-child{
+.scenic-choose ul li:first-child {
     background-color: #3ac3e2;
 }
 
-.spot{
+.spot {
     height: 80%;
     width: 80%;
     margin: 10px auto;
 }
 
-.weather{
+.weather {
     height: 80px;
     text-align: center;
 }
 
-.weather-pic{
+.weather-pic {
     display: inline-block;
     width: 80px;
     height: 80px;
     background-image: url(../img/weather.png);
 }
 
-.spotname{
+.spotname {
     height: 80px;
     line-height: 80px;
     text-align: center;
 }
 
-.bus{
+.bus {
     display: inline-block;
     width: 60px;
     text-align: center;
-    border:.5px solid #a2a2a2;
+    border: .5px solid #a2a2a2;
     background-color: #a5dec6;
     border-radius: 3px;
 }
 
-.recommend-message{
+.recommend-message {
     display: inline-block;
-    border:.5px solid #a2a2a2;
+    border: .5px solid #a2a2a2;
     background-color: #a5dec6;
     border-radius: 3px;
 }
 
-.sunny{
+.sunny {
     background-position: -160px 0;
 }
 
-.bigRain{
+.bigRain {
     background-position: -160px -80px;
 }
 
-.thunderstorm{
+.thunderstorm {
     background-position: 0 0;
 }
 
-.cloudy{
+.cloudy {
     background-position: 0 -80px;
 }
+
+
 /*留言墙模块*/
 
 .show-message {
@@ -454,15 +472,18 @@ nav li:hover {
     height: 40px;
 }
 
-label{
+label {
     color: white;
 }
 
-.showstrategy{
-    background-color: rgba(255,255,255,0.7);
+.showstrategy {
+    background-color: rgba(255, 255, 255, 0.7);
 }
+
+
 /*脚注部分*/
-.declaration{
+
+.declaration {
     text-align: center;
     color: white;
 }

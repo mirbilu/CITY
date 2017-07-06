@@ -91,8 +91,9 @@ $(document).ready(function() {
         datatype:'json',
         success:function(data){
             data.forEach(function(item,index,array){
-                var $thinspan = $('<i>').addClass('iconfont icon-comments').text(item.news);
-                var $thing = $('<div>').addClass('thing').append($thinspan);
+                var $thinga = $('<a>').attr({'href':item.url,'target':'_blank'}).text(item.news);
+                var $thingspan = $('<i>').addClass('iconfont icon-comments').append($thinga);
+                var $thing = $('<div>').addClass('thing').append($thingspan);
                 $(".over-things").append($thing);
             })
         }
@@ -204,7 +205,9 @@ $(document).ready(function() {
                 data: {
                     mcontant: newmessage,
                 },
-                success: function(data) {}
+                success: function(data) {
+                    alert("您的留言已上墙，如果没有出现请刷新页面！");
+                }
             });
             $.ajax({
                 type: 'get',

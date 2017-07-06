@@ -9,7 +9,8 @@
 		while($row=mysqli_fetch_assoc($result)){
 			array_push($senddata, array(
 				'id'=>$row['id'],
-				'news'=>$row['news']
+				'news'=>$row['news'],
+				'url'=>$row['url']
 			));
 		};
 		echo json_encode($senddata);

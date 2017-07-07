@@ -173,12 +173,12 @@ $(document).ready(function() {
                     var $spot = $(".spot").eq(index);
                     $spot.children(".row").children(".weather").children(".weather-pic").addClass(item.weather);
                     $spot.children(".row").children(".spotname").children("h1").text(item.spotname);
-                    var busnumber = item.bus.split(",");
+                    var busnumber = item.bus.split(',');
                     for (var i = 0; i < busnumber.length; i++) {
                         var $bus = $('<span>').addClass('bus').text(busnumber[i]);
                         $spot.children(".traffic").children(".busline").append($bus);
                     };
-                    var spotnames = item.recommend.split(",");
+                    var spotnames = item.recommend.split(',');
                     for (var i = 0; i < spotnames.length; i++) {
                         var $recommend = $('<span>').addClass('recommend-message').text(spotnames[i]);
                         $spot.children(".recommend").append($recommend);

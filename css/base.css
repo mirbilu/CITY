@@ -5,7 +5,6 @@
 
 body {
     min-width: 1000px;
-    /*background-image: url(../img/backpic.png);*/
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: #9bf1c1;
@@ -94,6 +93,11 @@ nav li:hover {
 
 .close{
     margin: 20px;
+}
+
+.register{
+    display: inline-block;
+    margin-left: 50px;
 }
 /*导航栏搜索模块*/
 .search-input {

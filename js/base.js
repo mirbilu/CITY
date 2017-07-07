@@ -92,6 +92,7 @@ $(document).ready(function() {
         success: function(data) {
             // data.forEach(function(item, index, array) {
             for (var index = 0; index <= data.length - 1; index++) {
+                var item = data[index];
                 var $thinga = $('<a>').attr({ 'href': item.url, 'target': '_blank' }).text(item.news);
                 var $thingspan = $('<i>').addClass('iconfont icon-comments').append($thinga);
                 var $thing = $('<div>').addClass('thing').append($thingspan);
@@ -194,6 +195,7 @@ $(document).ready(function() {
         success: function(data) {
             // data.forEach(function(item, index, array) {
             for (var index = 0; index <= data.length - 1; index++) {
+                var item = data[index];
                 var showTime = index * 2;
                 var $span = $('<div>').addClass('wallmessage').css('animation', 'rollin 5s linear ' + showTime + 's infinite').html(item.message);
                 $(".show-message").append($span);
@@ -221,6 +223,7 @@ $(document).ready(function() {
                     $(".show-message").empty();
                     // data.forEach(function(item, index, array) {
                     for (var index = 0; index <= data.length - 1; index++) {
+                        var item = data[index];
                         var showTime = index * 2;
                         var $span = $('<div>').addClass('wallmessage').css('animation', 'rollin 5s linear ' + showTime + 's infinite').html(item.message);
                         $(".show-message").append($span);
@@ -236,6 +239,7 @@ $(document).ready(function() {
         success: function(data) {
             // data.forEach(function(item, index, array) {
             for (var index = 0; index <= data.length - 1; index++) {
+                var item = data[index];
                 $(".strategy").eq(index).children("img").attr('src', item.img);
                 $(".strategy").eq(index).children(".strategy-contant").children(".introduce").text(item.troduce);
                 $(".strategy").eq(index).children(".strategy-contant").children("span").children(".visit").text(item.visitnumber);

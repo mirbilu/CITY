@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var winHight = $(window).height();
+    var winWidth = $(window).width();
     // 返回顶部按钮
     $(window).bind('scroll', function() {
         var scrollHight = $(window).scrollTop();
@@ -101,7 +103,6 @@ $(document).ready(function() {
         }
     });
     // 登录界面控制
-    var winHight = $(window).height();
     $(".admin-login").css('height', winHight);
     $(".login-page").css('margin-top', winHight / 3);
     $(".login").bind('click', function() {
@@ -110,7 +111,26 @@ $(document).ready(function() {
     $(".close").bind('click', function() {
         $(".admin-login").css('display', 'none');
     });
-    // 景区信息控制
+    $(".login-btn").bind('click', function() {
+            var $username = $("#inputadmin").val();
+            var $passwards = $("#inputPasswords").val();
+            $.ajax({
+                type: 'post',
+                url: 'server/checkuser.php',
+                data: { username: $username },
+                datatype: 'json',
+                success: function(data) {
+                    if (data[0].passwords == $passwards) {
+                        alert("登录成功");
+                        $(".admin-name").text($username);
+                        $(".admin-login").css('display', 'none');
+                    } else {
+                        alert("密码不正确或用户不存在");
+                    }
+                }
+            })
+        })
+        // 景区信息控制
     var scenicWidth = $(".scenicSpot").width();
     $(".scenic-wapper ul").width(scenicWidth * 4);
     $(".scenic-wapper ul li").width(scenicWidth);
@@ -234,17 +254,70 @@ $(document).ready(function() {
         // 攻略模块显示
     $.ajax({
         type: 'get',
-        url: 'server/getstrategy.php',
+        url: 'server/strategyshow.php',
         datatype: 'json',
         success: function(data) {
-            // data.forEach(function(item, index, array) {
-            for (var index = 0; index <= data.length - 1; index++) {
+            var index = data.length - 1;
+            for (var i = 0; i < 12; i++) {
                 var item = data[index];
-                $(".strategy").eq(index).children("img").attr('src', item.img);
-                $(".strategy").eq(index).children(".strategy-contant").children(".introduce").text(item.troduce);
-                $(".strategy").eq(index).children(".strategy-contant").children("span").children(".visit").text(item.visitnumber);
-                $(".strategy").eq(index).children(".strategy-contant").children("span").children(".like").text(item.likenumber);
+                $(".strategy").eq(i).children("img").attr('src', item.img);
+                $(".strategy").eq(i).children(".strategy-contant").children(".introduce").text(item.title);
+                $(".strategy").eq(i).children(".strategy-contant").children("span").children(".visit").text(item.visitnumber);
+                $(".strategy").eq(i).children(".strategy-contant").children("span").children(".like").text(item.likenumber);
+                index--;
             };
+        }
+    });
+    $(".strategy-show").css({ 'height': winHight / 2, 'top': winHight / 4, 'width': winWidth / 2, 'left': winWidth / 4 });
+    $(".strategy-content").css('height', winHight / 4);
+    $(".strategy").bind('click', function() {
+        var $showstrategy = $(this).children(".strategy-contant").children(".introduce").text();
+        $.ajax({
+            type: 'get',
+            url: 'server/strategyshow.php',
+            datatype: 'json',
+            success: function(data) {
+                console.log($showstrategy);
+                for (var index = 0; index <= data.length - 1; index++) {
+                    var item = data[index];
+                    if (item.title == $showstrategy) {
+                        $(".strategy-show").children("h1").text(item.title);
+                        $(".strategy-time").text(item.time);
+                        $(".strategy-type").text(item.type);
+                        $(".strategy-auther").text(item.auther);
+                        $(".strategy-content").text(item.introduce);
+                        $(".strategy-like").text(item.likenumber);
+                        $(".strategy-bad").text(item.visitnumber);
+                        $(".strategy-show").css({ 'display': 'block', 'animation': 'showin 2s ease forwards' });
+                        break;
+                    };
+                };
+            }
+        })
+    });
+    $(".close-show").bind('click', function() {
+        $(".strategy-show").css('display', 'none');
+        choosenumber = 0;
+    });
+    var choosenumber = 0;
+    $(".strategy-like").click(function() {
+        if (choosenumber == 0) {
+            var $like = $(".strategy-like").text();
+            $like++;
+            $(".strategy-like").text($like);
+            choosenumber = 1;
+        } else {
+            alert("您只能选择顶或踩一次");
+        }
+    });
+    $(".strategy-bad").click(function() {
+        if (choosenumber == 0) {
+            var $bad = $(".strategy-bad").text();
+            $bad++;
+            $(".strategy-bad").text($bad);
+            choosenumber = 1;
+        } else {
+            alert("您只能选择顶或踩一次");
         }
     });
     // 攻略分享平台效果
@@ -253,17 +326,27 @@ $(document).ready(function() {
         $("#inputFirstpage").val(firstpage);
     });
     $("#strategyplat-button").bind('click', function() {
-        $.ajax({
-            url: 'server/putstrategy.php',
-            type: 'post',
-            data: {
-                newtitle: $("#inputTitle").val(),
-                newfirstpage: $("#inputFirstpage").val(),
-            },
-            success: function(data) {
-                alert(data);
-            }
-        });
+        var $adminname = $(".admin-name").text();
+        console.log($adminname);
+        if ($adminname != "登录丨注册") {
+            $.ajax({
+                url: 'server/putstrategy.php',
+                type: 'post',
+                data: {
+                    newtitle: $("#inputTitle").val(),
+                    newfirstpage: $("#inputFirstpage").val(),
+                    newtype: $("#inputStyle").val(),
+                    newdate: $("#inputTime").val(),
+                    newcontant: $("#inputContant").val(),
+                    newauther: $(".admin-name").text(),
+                },
+                success: function(data) {
+                    alert("提交成功");
+                }
+            });
+        }else{
+            alert("请先登录");
+        }
     });
     $(".strategy").bind('mouseover', function() {
         $(this).addClass('showstrategy');

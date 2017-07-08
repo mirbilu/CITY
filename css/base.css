@@ -5,6 +5,7 @@
 
 body {
     min-width: 1000px;
+    background-image: url(../img/backpic.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: #9bf1c1;
@@ -484,7 +485,39 @@ label {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+/*攻略显示部分*/
+.strategy-show{
+    position: fixed;
+    background-color: rgba(255,255,255,0.9);
+    padding: 20px;
+    display: none;
+    border-radius: 10px;
+}
 
+.strategy-show h1{
+    color: red;
+}
+
+.strategy-information span{
+    display: inline-block;
+    margin:0 10px;
+}
+
+.close-show{
+    position: relative;
+    float: right;
+    margin: 20px;
+}
+
+@keyframes showin{
+    0%{transform: scale(0);};
+    100%{transform: scale(1);};
+}
+
+.attitude{
+    position: relative;
+    float: right;
+}
 /*脚注部分*/
 
 .declaration {

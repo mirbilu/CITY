@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <title>福州城市</title>
     <link rel="shortcut icon" href="img/f_spot.ico" type="image/x-icon ">
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="font/iconfont.css">
-    <!-- <script src="js/jquery.min.js"></script> -->
     <script src="https://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <script type="text/javascript" src="js/base.js"></script>
 </head>
@@ -18,8 +16,8 @@
     <header>
         <nav>
             <ul>
-                <li class="login"><i class="iconfont icon-iconfontmingpian"></i>登录/注册</li>
-                <li><i class="iconfont icon-map"></i><a href="">跳转</a></li>
+                <li class="login"><i class="iconfont icon-iconfontmingpian"></i><span class="admin-name">登录/注册</span></li>
+                <li><i class="iconfont icon-map"></i><a href="http://sp.fuzhou.gov.cn/fzswssmfwzx/View/Index.aspx" target="_blank">福州市民服务中心</a></li>
                 <li class="">
                     <i class="iconfont icon-search search"></i>
                     <span class="search">搜索</span>
@@ -188,7 +186,7 @@
         </div>
         <div class="container">
             <div class="strategyShare container">
-                <h1>攻略分享</h1>
+                <h1>最新攻略分享</h1>
                 <div class="row strategybox">
                     <div class="strategy col-sm-3">
                         <img src="" alt="">
@@ -312,13 +310,13 @@
                     <div class="form-group">
                         <label for="inputadmin" class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputadmin" placeholder="邮箱/手机号">
+                            <input type="text" class="form-control" id="inputadmin" placeholder="用户名">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                        <label for="inputPasswords" class="col-sm-2 control-label">密码</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword3" placeholder="密码">
+                            <input type="password" class="form-control" id="inputPasswords" placeholder="密码">
                         </div>
                     </div>
                     <div class="form-group">
@@ -332,12 +330,26 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary btn-lg">登录</button>
+                            <button type="button" class="btn btn-primary btn-lg login-btn">登录</button>
                             <a href="#" class="register">注册</a>
                         </div>
                     </div>
                 </form>
             </div>
+        </div>
+    </div>
+    <div class="strategy-show">
+        <i class="iconfont icon-close close-show"></i>
+        <h1></h1>
+        <div class="strategy-information">
+            <span>日期：<span class="strategy-time"></span></span>
+            <span>作者：<span class="strategy-auther"></span></span>
+            <span>类型：<span class="strategy-type"></span></span>
+        </div>
+        <div class="strategy-content"></div>
+        <div class="attitude">
+            <i class="iconfont icon-good strategy-like"></i>
+            <i class="iconfont icon-bad strategy-bad"></i>
         </div>
     </div>
 </body>
